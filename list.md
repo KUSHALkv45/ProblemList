@@ -4,3 +4,7 @@
 ---
 
 [bin Sea] :(https://leetcode.com/problems/minimum-time-to-complete-all-deliveries/description/) 
+
+
+---
+[Union Find but related to making k components] : (https://leetcode.com/problems/minimum-time-for-k-connected-components/description/)
