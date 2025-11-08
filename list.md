@@ -8,3 +8,4 @@
 
 ---
 [Union Find but related to making k components] : (https://leetcode.com/problems/minimum-time-for-k-connected-components/description/)
+                                        [simiP] : (https://leetcode.com/problems/minimize-maximum-component-cost/description/) 
