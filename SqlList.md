@@ -2,3 +2,5 @@
 ---
 [2] : (https://leetcode.com/problems/monthly-transactions-i/?envType=study-plan-v2&envId=top-sql-50)
 ---
+[3] : (https://leetcode.com/problems/game-play-analysis-iv/submissions/1828836876/?envType=study-plan-v2&envId=top-sql-50)
+---
