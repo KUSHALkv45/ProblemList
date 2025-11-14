@@ -4,3 +4,5 @@
 ---
 [3] : (https://leetcode.com/problems/game-play-analysis-iv/submissions/1828836876/?envType=study-plan-v2&envId=top-sql-50)
 ---
+[4] : (https://leetcode.com/problems/product-price-at-a-given-date/?envType=study-plan-v2&envId=top-sql-50)
+---
