@@ -8,3 +8,5 @@
 ---
 [5] : (https://leetcode.com/problems/department-top-three-salaries/description/?envType=study-plan-v2&envId=top-sql-50)
 ---
+[6] : (https://leetcode.com/problems/movie-rating/description/?envType=study-plan-v2&envId=top-sql-50)
+---
