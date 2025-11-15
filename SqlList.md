@@ -10,3 +10,5 @@
 ---
 [6] : (https://leetcode.com/problems/movie-rating/description/?envType=study-plan-v2&envId=top-sql-50)
 ---
+[7] : (https://leetcode.com/problems/find-users-with-valid-e-mails/description/?envType=study-plan-v2&envId=top-sql-50)
+---
