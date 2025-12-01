@@ -12,3 +12,5 @@
 ---
 [7] : (https://leetcode.com/problems/find-users-with-valid-e-mails/description/?envType=study-plan-v2&envId=top-sql-50)
 ---
+[8] : (https://platform.stratascratch.com/coding/2089-cookbook-recipes?code_type=3) - recursion is req here if it really
+---
