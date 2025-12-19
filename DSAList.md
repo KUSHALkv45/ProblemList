@@ -9,3 +9,7 @@
 ---
 [Union Find but related to making k components] : (https://leetcode.com/problems/minimum-time-for-k-connected-components/description/)
                                         [simiP] : (https://leetcode.com/problems/minimize-maximum-component-cost/description/) 
+---
+
+[greedy] :(https://leetcode.com/problems/find-the-most-competitive-subsequence/description/?envType=problem-list-v2&envId=greedy)
+---
