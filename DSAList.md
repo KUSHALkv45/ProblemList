@@ -19,3 +19,4 @@
 - then The problem becomes finding same sum subarrays
 - Intresting model
 ----
+-[good model] -(https://leetcode.com/problems/number-of-alternating-xor-partitions/)
