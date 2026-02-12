@@ -1,5 +1,3 @@
-
-
 import streamlit as st
 import json
 import base64
@@ -43,22 +41,7 @@ def save_file(data: list, sha):
     r = requests.put(url, headers=HEADERS, json=payload)
     r.raise_for_status()
 
-# ── Password gate ─────────────────────────────────────────────────────────────
-ADMIN_PASSWORD = st.secrets["ADMIN_PASSWORD"]
 
-if "authenticated" not in st.session_state:
-    st.session_state.authenticated = False
-
-if not st.session_state.authenticated:
-    st.title("🔒 Admin Login")
-    pwd = st.text_input("Password", type="password")
-    if st.button("Login"):
-        if pwd == ADMIN_PASSWORD:
-            st.session_state.authenticated = True
-            st.rerun()
-        else:
-            st.error("Wrong password. Try again.")
-    st.stop()
 
 # ── Admin UI ──────────────────────────────────────────────────────────────────
 st.title("🔧 Admin – Standby List")
@@ -139,9 +122,3 @@ else:
                         problems, sha = get_file()
                     st.success("Deleted!")
                     st.rerun()
-
-# ── Logout ────────────────────────────────────────────────────────────────────
-st.divider()
-if st.button("🚪 Logout"):
-    st.session_state.authenticated = False
-    st.rerun()
