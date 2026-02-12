@@ -4,7 +4,7 @@ import base64
 import requests
 
 # ── Page config ───────────────────────────────────────────────────────────────
-st.set_page_config(page_title="Standby List", page_icon="📋", layout="centered")
+st.set_page_config(page_title="View – Standby List", page_icon="📋", layout="centered")
 
 # ── GitHub helpers ────────────────────────────────────────────────────────────
 GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
@@ -16,7 +16,7 @@ HEADERS = {
     "Accept": "application/vnd.github.v3+json",
 }
 
-@st.cache_data(ttl=60)   # refresh every 60 seconds
+@st.cache_data(ttl=60)
 def get_problems():
     url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{FILE_PATH}"
     r = requests.get(url, headers=HEADERS)
@@ -31,7 +31,6 @@ st.title("📋 Standby List")
 
 problems = get_problems()
 
-# ── Filters ───────────────────────────────────────────────────────────────────
 STATUS_ORDER = {"To Do": 0, "Learn": 1, "Done": 2}
 STATUS_EMOJI = {"To Do": "🔴", "Learn": "🟡", "Done": "🟢"}
 STATUS_COLOR = {
@@ -40,6 +39,7 @@ STATUS_COLOR = {
     "Done":  "#21C354",
 }
 
+# ── Filters ───────────────────────────────────────────────────────────────────
 col1, col2 = st.columns([2, 1])
 with col1:
     search = st.text_input("🔍 Search", placeholder="Filter by title…")
@@ -50,25 +50,17 @@ with col2:
         default=["To Do", "Learn", "Done"],
     )
 
-# Apply filters
-filtered = [
-    p for p in problems
-    if p["status"] in filter_status
-    and search.lower() in p["title"].lower()
-]
+# Apply filters & sort
+filtered = sorted(
+    [p for p in problems if p["status"] in filter_status and search.lower() in p["title"].lower()],
+    key=lambda x: STATUS_ORDER.get(x["status"], 9)
+)
 
-# Sort: To Do → Learn → Done
-filtered = sorted(filtered, key=lambda x: STATUS_ORDER.get(x["status"], 9))
-
-# ── Stats row ─────────────────────────────────────────────────────────────────
-todo_count  = sum(1 for p in problems if p["status"] == "To Do")
-learn_count = sum(1 for p in problems if p["status"] == "Learn")
-done_count  = sum(1 for p in problems if p["status"] == "Done")
-
+# ── Stats ─────────────────────────────────────────────────────────────────────
 c1, c2, c3 = st.columns(3)
-c1.metric("🔴 To Do",  todo_count)
-c2.metric("🟡 Learn",  learn_count)
-c3.metric("🟢 Done",   done_count)
+c1.metric("🔴 To Do",  sum(1 for p in problems if p["status"] == "To Do"))
+c2.metric("🟡 Learn",  sum(1 for p in problems if p["status"] == "Learn"))
+c3.metric("🟢 Done",   sum(1 for p in problems if p["status"] == "Done"))
 
 st.divider()
 
@@ -78,21 +70,15 @@ if not filtered:
 else:
     current_status = None
     for prob in filtered:
-        # Section header when status changes
         if prob["status"] != current_status:
             current_status = prob["status"]
-            emoji = STATUS_EMOJI[current_status]
-            st.markdown(f"### {emoji} {current_status}")
+            st.markdown(f"### {STATUS_EMOJI[current_status]} {current_status}")
 
-        # Problem card
         has_link = bool(prob.get("link", "").strip())
-        title_display = (
-            f"[{prob['title']}]({prob['link']})" if has_link else prob["title"]
-        )
-
         badge_color = STATUS_COLOR.get(prob["status"], "#888")
         added = prob.get("added", "")
         added_str = f"<span style='color:#888;font-size:0.8em;'>Added: {added}</span>" if added else ""
+        link_btn = f"&nbsp;&nbsp;<a href='{prob['link']}' target='_blank' style='font-size:0.85em;'>🔗 Open</a>" if has_link else ""
 
         st.markdown(
             f"""
@@ -103,8 +89,8 @@ else:
                 background: #1e1e1e;
                 border-radius: 4px;
             ">
-                <span style="font-size:1.05em;font-weight:600;">{title_display if not has_link else prob['title']}</span>
-                {"&nbsp;&nbsp;<a href='" + prob['link'] + "' target='_blank' style='font-size:0.85em;'>🔗 Open</a>" if has_link else ""}
+                <span style="font-size:1.05em;font-weight:600;">{prob['title']}</span>
+                {link_btn}
                 <br/>{added_str}
             </div>
             """,
