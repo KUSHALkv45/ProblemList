@@ -77,8 +77,8 @@ else:
         has_link = bool(prob.get("link", "").strip())
         badge_color = STATUS_COLOR.get(prob["status"], "#888")
         added = prob.get("added", "")
-        added_str = f"<div style='color:#888;font-size:0.8em;margin-top:4px;'>Added: {added}</div>" if added else ""
-        link_btn = f"&nbsp;&nbsp;<a href='{prob['link']}' target='_blank' style='font-size:0.85em;'>🔗 Open</a>" if has_link else ""
+        added_str = f'<div style="color:#888;font-size:0.8em;margin-top:4px;">Added: {added}</div>' if added else ""
+        link_btn = f'&nbsp;&nbsp;<a href="{prob["link"]}" target="_blank" style="font-size:0.85em;">🔗 Open</a>' if has_link else ""
         
         st.markdown(
             f"""
