@@ -138,5 +138,12 @@
     "link": "https://codeforces.com/contest/2171",
     "status": "To Do",
     "added": "2026-02-18"
+  },
+  {
+    "id": "20260219004934953020",
+    "title": "DandC , Segment Tree",
+    "link": "https://leetcode.com/problems/beautiful-array/description/",
+    "status": "Learn",
+    "added": "2026-02-19"
   }
 ]
