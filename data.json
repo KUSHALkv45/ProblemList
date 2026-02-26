@@ -180,5 +180,12 @@
     "link": "https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/description/",
     "status": "To Do",
     "added": "2026-02-25"
+  },
+  {
+    "id": "20260226121641741803",
+    "title": "to find the maximum profit given maximum number of concurrent jobs allowed Eg: along with the arrays, an integer maxConcurrentJobs = 2. Person is allowed to do 2 concurrent jobs",
+    "link": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/description/",
+    "status": "To Do",
+    "added": "2026-02-26"
   }
 ]
