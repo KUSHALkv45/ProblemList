@@ -187,5 +187,12 @@
     "link": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/description/",
     "status": "To Do",
     "added": "2026-02-26"
+  },
+  {
+    "id": "20260301102813884708",
+    "title": "LC-424",
+    "link": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+    "status": "To Do",
+    "added": "2026-03-01"
   }
 ]
