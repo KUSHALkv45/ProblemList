@@ -201,5 +201,12 @@
     "link": "",
     "status": "To Do",
     "added": "2026-03-01"
+  },
+  {
+    "id": "20260309123645378142",
+    "title": "Manhattan MST trick",
+    "link": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+    "status": "Learn",
+    "added": "2026-03-09"
   }
 ]
