@@ -215,5 +215,12 @@
     "link": "https://leetcode.com/problems/count-fancy-numbers-in-a-range/description/",
     "status": "Learn",
     "added": "2026-03-14"
+  },
+  {
+    "id": "20260316210645824876",
+    "title": "Lazy mult + addition",
+    "link": "https://leetcode.com/problems/fancy-sequence/description/?envType=daily-question&envId=2026-03-15",
+    "status": "Learn",
+    "added": "2026-03-16"
   }
 ]
