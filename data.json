@@ -222,5 +222,12 @@
     "link": "https://leetcode.com/problems/fancy-sequence/description/?envType=daily-question&envId=2026-03-15",
     "status": "Learn",
     "added": "2026-03-16"
+  },
+  {
+    "id": "20260319151346806171",
+    "title": "AHO-corasick",
+    "link": "https://leetcode.com/problems/construct-string-with-minimum-cost/description/",
+    "status": "Learn",
+    "added": "2026-03-19"
   }
 ]
